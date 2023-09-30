@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Course" representedClassName="Course" syncable="YES" codeGenerationType="class">
+        <attribute name="courseCode" optional="YES" attributeType="String"/>
+        <attribute name="courseColor" optional="YES" attributeType="String"/>
+        <attribute name="courseDay" optional="YES" attributeType="String"/>
+        <attribute name="courseEndTime" optional="YES" attributeType="String"/>
+        <attribute name="courseName" optional="YES" attributeType="String"/>
+        <attribute name="coursePlace" optional="YES" attributeType="String"/>
+        <attribute name="courseSec" optional="YES" attributeType="String"/>
+        <attribute name="courseStartTime" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="days" optional="YES" toMany="YES" minCount="1" maxCount="2" deletionRule="Nullify" destinationEntity="CourseDay" inverseName="course" inverseEntity="CourseDay"/>
+    </entity>
+    <entity name="CourseDay" representedClassName="CourseDay" syncable="YES" codeGenerationType="class">
+        <attribute name="dayOfWeek" optional="YES" attributeType="String"/>
+        <attribute name="endTime" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="String"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="days" inverseEntity="Course"/>
+    </entity>
+</model>
